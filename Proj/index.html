@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Solitaire</title>
+<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css.css"/>
+    <script type="text/javascript" src="./js/model.js"></script>
+    <script type="text/javascript" src="./js/view.js"></script>
+    <script type="text/javascript" src="./js/control.js"></script>
+
+    </head>
+    <body onload="Control.onLoad();">
+        <div class="header">
+                <h1 class="headerFont" id="slogan"></h1>
+        </div> 
+
+        <div class="dealStack">
+            <div class="infoField">
+                <img src="cards/w0.png"  alt="" width="79" height="123"/>
+                <span class="infotext">10 hidden</span>
+            </div>
+            <div class="infoField">
+                <img src="cards/stack.png"  alt="" width="85" height="129"/>
+                <span class="infotext" id="di0">5 hidden</span>
+            </div>
+          
+          
+        </div>
+        <div class="acesStack">
+            <div class="infoField">
+                <img src="cards/wc1.png"  alt="" width="79" height="123" id="a0" />
+                <span class="infotext">10 cards hidden</span>
+            </div>
+            <div class="infoField">
+                <img src="cards/w0.png"  alt="" width="79" height="123" id="a1" />
+                <span class="infotext">10 cards hidden</span>
+            </div>
+            <div class="infoField">
+                <img src="cards/w0.png"  alt="" width="79" height="123" id="a2" />
+                <span class="infotext">10 cards hidden</span>
+            </div>
+            <div class="infoField">
+                <img src="cards/w0.png"  alt="" width="79" height="123" id="a3" />
+                <span class="infotext">10 cards hidden</span>
+            </div>
+            
+            <div class="controls" onclick="Control.cheat()">
+                Cheat
+            </div> 
+            <div class="controls" onclick="Control.newGame()">
+                Restart
+            </div> 
+        </div>
+        <div class="mainStack">
+            <table>
+              <tr>
+                <td >
+                    <div class="infoField" >
+                        <div class="cardAdder" id="m0a0"></div>
+                        <span class="infotext" id="mi0" >10 cards hidden</span>
+                    </div>
+                        <div class="cardAdder" id="m0a1"></div>
+                </td>
+                <td >
+                    <div class="infoField">
+                        <div class="cardAdder" id="m1a0"></div>
+                        <span class="infotext" id="mi1" >10 cards hidden</span>
+                    </div>
+                        <div class="cardAdder" id="m1a1"></div>
+                </td>
+                <td >
+                    <div class="infoField">
+                        <div class="cardAdder" id="m2a0"></div>
+                        <span class="infotext" id="mi2" >10 cards hidden</span>
+                    </div>
+                        <div class="cardAdder" id="m2a1"></div>
+                </td>
+                <td >
+                    <div class="infoField">
+                        <div class="cardAdder" id="m3a0"></div>
+                        <span class="infotext" id="mi3" >10 cards hidden</span>
+                    </div>
+                        <div class="cardAdder" id="m3a1"></div>
+                </td>
+                <td >
+                    <div class="infoField">
+                        <div class="cardAdder" id="m4a0"></div>
+                        <span class="infotext" id="mi4" >10 cards hidden</span>
+                    </div>
+                        <div class="cardAdder" id="m4a1"></div>
+                </td>
+                <td >
+                    <div class="infoField">
+                        <div class="cardAdder" id="m5a0"></div>
+                        <span class="infotext" id="mi5" >10 cards hidden</span>
+                    </div>
+                        <div class="cardAdder" id="m5a1"></div>
+                </td>
+                <td >
+                    <div class="infoField">
+                        <div class="cardAdder" id="m6a0"></div>
+                        <span class="infotext" id="mi6" >10 cards hidden</span>
+                    </div>
+                        <div class="cardAdder" id="m6a1"></div>
+                </td>              
+              </tr>
+            </table>
+            
+            
+            
+            
+            
+        </div>
+        <script>
+            
+//            newDeck()
+//            view.setAces();
+//            addImage();
+        </script>
+    </body>
+</html>
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Truth Tables</title>
+</head>
+<body>
+  <script type="text/javascript">
+        function truthRow(x, y){
+            //populate an array with various boolean operations
+            var result=[
+                x,
+                y,
+                ( !x),
+                ( !y),
+                ( x && y ),
+                ( x || y ),
+                // xor xy
+                (  x ? !y : y  ),   
+                // xor xy xor x
+                ( (  x ? ! y : y  )? ! y : y  ),
+                // xor xy xor y
+                ( (  x  ? ! y : y  )? ! x : x  ),
+                // !(x&&y)
+                ( !(x && y) ),
+                // !x || !y
+                ( !x || !y ),
+                // !(x||y)
+                ( !( x || y ) ),
+                // !x && !y
+                ( !x  && !y )
+            ];
+            //convert to table-row formatted string
+            var len=result.length;
+            var rowString='<tr>';
+            for (var i=0; i < len; i++){
+                rowString+='<td>' + result[i].toString()+ '</td>';
+            }
+            return rowString+'<tr>';
+        }
+        //create test table 11,10,01,00
+        var x=[true, true, false, false];
+        var y=[true, false, true, false];
+        //prepare output: headings
+        var out=
+            '<table width="200" border="1">'+
+            '<tr>'+
+            '<th>x</th>'+
+            '<th>y</th>'+
+            '<th>!x</th>'+
+            '<th>!y</th>'+
+            '<th>x&amp;&amp;y</th>'+
+            '<th>x||y</th>'+
+            '<th>x^y</th>'+
+            '<th>x^y^x</th>'+
+            '<th>x^y^y</th>'+
+            '<th>!(x&amp;&amp;y</th>'+
+            '<th>!x||!y</th>'+
+            '<th>!(x||y)</th>'+
+            '<th>!x&amp;&amp;!y</th>'+
+            '</tr>';
+        //prepare output: results for test table
+        for (var i=0; i < 4; i++) {
+            out+=truthRow(x[i], y[i]);
+        }
+        out+='</table>'; 
+        //display
+        document.write(out);
+  </script>
+</body>
+</html>
+
