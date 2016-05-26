@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Standard Deviation</title>
+<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+        crossorigin="anonymous"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" 
+        integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" 
+        crossorigin="anonymous"/>
+    <script type="text/javascript" src="./js/sd.js"></script>
+    
+    <style>
+        .clr {
+                clear:both;
+                padding:0;
+                margin:0;
+                width:100%;
+                font-size:0;
+                line-height:0;
+        }
+    </style>
+    </head>
+    <body >
+        <div class="well well-main">
+            <h1>Standard Deviation Calculator</h1>
+            <h4>By Dave Swanson</h4>
+        </div>
+        <div class="container-fluid">
+        <div class="row">
+            
+          <div class="col-sm-6">
+            <div class="input-group">
+              <label>What is your sample size? (integers only)&nbsp;</label>
+              <input type="text" id="size_box" onkeyup="valInt(this.value)" 
+                     class="form-group" placeholder="10" autofocus />
+              <span class="input-group-btn">
+                <button class="btn btn-default" id="size_submit" type="button" 
+                        style="visibility: hidden;"
+                        onclick="initSize()">Next</button>
+              </span>
+            </div>
+            <div class="input-group" id="addHere"></div>
+            <br/>
+            <div class="input-group" id="addButton"></div>
+          </div>
+        </div>
+        <div id="jsOut"></div>
+        <script>
+            //proveItWorks( 10 );
+        </script>
+        </div>
+    </body>
+</html>
