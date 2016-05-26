@@ -1,0 +1,90 @@
+body{
+    background-image: url( "images/billiard1.jpg" );
+}
+/*.clr {
+    clear:both;
+    padding:0;
+    margin:0;
+    width: 200px;
+    font-size:0;
+    line-height:0;
+}*/
+.header{
+    padding: 0;
+    height: 100px;
+    width:100%;
+    background-image: url( "images/woodgrain.png" );
+    color: green;
+}
+h1 {
+    padding: 35px 25px;
+    color: white;
+    text-shadow: 2px 2px 8px yellow;
+}
+.controls{
+    float: right;
+    padding: 0 25px 0 0;
+    font-size: 18px;
+    text-shadow: 2px 2px 8px yellow;
+    color: white;
+}
+.controls:hover {
+    color: red;
+}
+
+.dealStack {
+    position: relative;
+    display: inline-block;
+    float: left;
+    padding: 10px 25px 5px 25px;
+    width: 20%;
+    height: 130px;
+}
+.acesStack {
+    float: left;
+    padding: 10px 25px 5px 25px;
+    width: 80%;   
+}
+.mainStack {
+    float: left;
+    padding: 10px 25px 5px 25px;
+    width: 100%;   
+}
+.cardAdder{
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+td {
+    vertical-align: top;
+    padding: 0 5px 0 0;
+}
+.showCards {
+    display: block;
+}
+.infoField {
+    position: relative;
+    display: inline;
+}
+.infoField .infotext {
+    visibility: hidden;
+    width: 40px;
+    background-color: white;
+    color: black;
+    text-shadow: 2px 2px 8px yellow;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    left: 15px;
+    top: 1px;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.infoField:hover .infotext {
+    visibility: visible;
+}
+

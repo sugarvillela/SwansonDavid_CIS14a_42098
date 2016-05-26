@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Solitaire</title>
+<!-- Started with Bootstrap, but every element is styled with my own css. Some
+    Bootstrap still applies to <body> so leave it here -->
+    <link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css.css"/>
+    <script type="text/javascript" src="./js/model.js"></script>
+    <script type="text/javascript" src="./js/view.js"></script>
+    <script type="text/javascript" src="./js/control.js"></script>
+
+    </head>
+    <!--Game automatically starts or reloads when page is loaded-->
+    <body onload="Control.init();">
+    <!--Id="slogan": header is populated by js random content: view/header.renderText()-->
+        <div class="header">
+            <h1 id="slogan"></h1>
+        </div> 
+    <!--dealStack: img tags exist with source and size set from View_deal-->
+    <!--All class="infoField" tags provide pop-up info on cards hidden    -->
+        <div class="dealStack">
+            <div class="infoField">
+                <img src="cards/stack.png"  alt="" width="85" height="129" id="d0" onclick="Control.advance()"/>
+                <span class="infotext" id="di0"></span>
+            </div>
+            <div class="infoField" >
+                <img src="cards/w0.png"  alt="" width="79" height="123" id="d1" ondragstart="Control.saveIdFrom( 'd1', this.src )"/>
+                <span class="infotext" id="di1"></span>
+            </div>
+        </div>
+        <!--acesStack: img tags exist with source set from View_aces-->
+        <div class="acesStack">
+            <div class="infoField">
+                <img src="cards/w0.png"  alt="" width="79" height="123" id="a0" ondragover="allowDrop(event)"
+                     ondrop="Control.moveToAces( 'a0', this.src )" />
+                <span class="infotext" id="ai0">0 Hidden</span>
+            </div>
+            <div class="infoField">
+                <img src="cards/w0.png"  alt="" width="79" height="123" id="a1" ondragover="allowDrop(event)"
+                     ondrop="Control.moveToAces( 'a1', this.src )" />
+                <span class="infotext" id="ai1">0 Hidden</span>
+            </div>
+            <div class="infoField">
+                <img src="cards/w0.png"  alt="" width="79" height="123" id="a2" ondragover="allowDrop(event)"
+                     ondrop="Control.moveToAces( 'a2', this.src )" />
+                <span class="infotext" id="ai2">0 Hidden</span>
+            </div>
+            <div class="infoField">
+                <img src="cards/w0.png"  alt="" width="79" height="123" id="a3" ondragover="allowDrop(event)"
+                     ondrop="Control.moveToAces( 'a3', this.src )" />
+                <span class="infotext" id="ai3">0 Hidden</span>
+            </div>
+            <!--Restart and cheat controls act like links but don't reload the page-->
+            <div class="controls" onclick="Control.cheat()">
+                Cheat
+            </div> 
+            <div class="controls" onclick="Control.newGame()">
+                Restart
+            </div> 
+        </div>
+        <!--mainStack: img tags don't exist, are added by View_main.render()  To keep infoText
+        pop-ups in the right place, there are two cardAdder points: one for first card, and
+        the second for all other cards-->
+        <div class="mainStack">
+            <table>
+              <tr>
+                <td >
+                    <div class="infoField" >
+                        <div class="cardAdder" id="0_add_root"></div>
+                        <span class="infotext" id="mi0" ></span>
+                    </div>
+                        <div class="cardAdder" id="0_add_stem"></div>
+                </td>
+                <td >
+                    <div class="infoField">
+                        <div class="cardAdder" id="1_add_root"></div>
+                        <span class="infotext" id="mi1" ></span>
+                    </div>
+                        <div class="cardAdder" id="1_add_stem"></div>
+                </td>
+                <td >
+                    <div class="infoField">
+                        <div class="cardAdder" id="2_add_root"></div>
+                        <span class="infotext" id="mi2" ></span>
+                    </div>
+                        <div class="cardAdder" id="2_add_stem"></div>
+                </td>
+                <td >
+                    <div class="infoField">
+                        <div class="cardAdder" id="3_add_root"></div>
+                        <span class="infotext" id="mi3" ></span>
+                    </div>
+                        <div class="cardAdder" id="3_add_stem"></div>
+                </td>
+                <td >
+                    <div class="infoField">
+                        <div class="cardAdder" id="4_add_root"></div>
+                        <span class="infotext" id="mi4" ></span>
+                    </div>
+                        <div class="cardAdder" id="4_add_stem"></div>
+                </td>
+                <td >
+                    <div class="infoField">
+                        <div class="cardAdder" id="5_add_root"></div>
+                        <span class="infotext" id="mi5" ></span>
+                    </div>
+                        <div class="cardAdder" id="5_add_stem"></div>
+                </td>
+                <td >
+                    <div class="infoField">
+                        <div class="cardAdder" id="6_add_root"></div>
+                        <span class="infotext" id="mi6" ></span>
+                    </div>
+                        <div class="cardAdder" id="6_add_stem"></div>
+                </td>              
+              </tr>
+            </table>
+        </div>
+    </body>
+</html>
+
+
