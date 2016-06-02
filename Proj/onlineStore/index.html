@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>LogIn</title>
+<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+        crossorigin="anonymous"/>
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" 
+        integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" 
+        crossorigin="anonymous"/>
+    <script type="text/javascript" src="./js/web_store.js"></script>
+    <link rel="stylesheet" type="text/css" href="css.css"/>
+    </head>
+    <body onload="checkLocal">
+        <div class="header">
+            <h1>Dave's Redneck Escort Service</h1>
+        </div>
+        <div class="container-fluid">  
+        <div class="m-t-15">
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="input-group">
+              <label>Use an Email r sumthin <br/>ta lag yurself in:</label>
+              <br/>
+              <input type="text" id="email" onkeyup="valLoginText()" 
+                     class="form-group" placeholder="email@provider.com" autofocus />
+              <br/>
+              <label>Ya gotta has a password to:</label>
+              <br/>
+              <input type="password" id="password" onkeyup="valLoginText()" 
+                     class="form-group" />
+              <br/>
+                <button class="btn btn-default" id="login_submit" type="button" 
+                        style="visibility: hidden;"
+                        onclick="checkLoginData()">Next</button>
+            </div>
+          </div>
+          <div class="col-sm-3">
+              <h2>Come n lookit are selection of handsome fellers!</h2>
+          </div>
+          <div class="col-med-5">
+              <img  src="images/sexyredneck.jpg" alt="Smiley face" />
+          </div>
+        </div>
+        </div>
+       </div>
+    </body>
+</html>

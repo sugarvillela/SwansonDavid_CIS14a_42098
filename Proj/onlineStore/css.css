@@ -1,0 +1,117 @@
+body{
+    background-image: url( "images/mud.jpg" );
+}      
+td {
+    padding: 5px;
+}
+.header{
+    padding: 0;
+    height: 70px;
+    width:100%;
+    background-image: url( "images/banner1.jpg" );
+    text-align: center;
+/*    text-shadow: 0px 0px 8px white;*/
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+h1{
+    font-size: 60px;
+    color: #47d147;
+}
+h2{
+    font-size: 40px;
+    color: #47d147;
+    text-shadow: 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
+a{
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+}
+a:visited{
+    color:white;
+    text-decoration: none;
+}
+a:hover {
+    border: 5px yellow;
+    color: yellow;
+/*    font-size: 24px;*/
+    text-decoration: none;
+}
+.aSpecial:hover{
+    color: orange;
+    
+}
+
+label{
+    color: white;
+    font-size: 20px;
+}
+.clr {
+        clear:both;
+        padding:0;
+        margin:0;
+        width:100%;
+        font-size:0;
+        line-height:0;
+}
+.hid{
+    display: none;
+    padding:0;
+    margin:0;
+    border: 0;
+    line-height:0;
+    font-size:0;
+    height: 0;
+    width:0px;
+    overflow: hidden;
+}
+.myNav{
+    padding:10px;
+    height: 50px;
+}
+
+.black_overlay{
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #D0E0E0;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+}
+.white_content {
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    padding: 16px;
+    border: 2px solid gray;
+    border-radius: 0 50px 0 15px;
+    background-image: url( "images/astroturf.jpg" );
+    color: white;
+    z-index:1002;
+    overflow: auto;
+}
+.popForm{
+    display: none;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    padding: 16px;
+    border: 2px solid gray;
+    background-color: white;
+    color: black;
+    z-index:1002;
+    overflow: auto;
+}
+dd{
+    font-size: 16px;
+}

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Browse Escorts</title>
+<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" 
+        crossorigin="anonymous"/>
+    <!-- Optional theme -->
+    <link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" 
+        integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" 
+        crossorigin="anonymous"/>
+    <script type="text/javascript" src="./js/web_store.js"></script>
+    <link rel="stylesheet" type="text/css" href="css.css"/>
+    </head>
+    <body onload="View.init()">
+        <div id="fade" class="black_overlay"></div><!--Provides fade out when calendar link is clicked-->
+        <div id="lightbox" class="white_content">
+            <div class="container-fluid">
+                <div class="hid" id="detail_hidden"></div>
+                <div class="row" >
+                <div class="col-md-6">
+                    <img class="img-responsive" id="detail_img" src="" alt="Smiley face"/>  
+                </div>
+                <div class="col-md-6">
+                    <dl class="dl-horizontal" >
+                      <dt>Name</dt>
+                      <dd id="detail_name"></dd>
+                      <dt>Sign</dt>
+                      <dd id="detail_sign"></dd>
+                      <dt>Deep thoughts n such</dt>
+                      <dd id="detail_bio"></dd>
+                      <dt>Price</dt>
+                      <dd id="detail_price"></dd>
+                    </dl>
+                    <p class="text-right" id="">
+                        <a class="aSpecial" href = "#" onclick = "View.endDetail();Control.toCart_detail();">Add to Cart!</a>
+                    </p> 
+                    <p class="text-right" id="">
+                        <a class="aSpecial" href = "#" onclick = "View.endDetail();">Go Back</a>
+                    </p> 
+                </div>
+                </div>
+            </div>  
+        </div>
+        <div id="checkoutForm" class="popForm">
+            <div class="container-fluid">
+                <div class="row" >
+                <div class="col-md-4">
+                    <div id="addToForm"></div>
+                </div>
+                <div class="col-md-8">
+                    <p class="text-right">
+                        <a style="color: blue;" href = "#" onclick = "View.endCheckoutForm();">Cancel</a>
+                    </p>
+                <div class="row">
+                <div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+                <div class="row">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Gentleman</th>
+                                <th>Hours</th>
+                                <th class="text-center">Price</th>
+                                <th class="text-center">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="tr0">
+                                <td class="col-md-9" id="tName0"></td>
+                                <td class="col-md-1" style="text-align: center" id="tHrs0"></td>
+                                <td class="col-md-1 text-center" id="tPrice0"></td>
+                                <td class="col-md-1 text-center" id="tSub0"></td>
+                            </tr>
+                            <tr id="tr1">
+                                <td class="col-md-9" id="tName1"></td>
+                                <td class="col-md-1" style="text-align: center" id="tHrs1"></td>
+                                <td class="col-md-1 text-center" id="tPrice1"></td>
+                                <td class="col-md-1 text-center" id="tSub1"></td>
+                            </tr>
+                            <tr id="tr2">
+                                <td class="col-md-9" id="tName2"></td>
+                                <td class="col-md-1" style="text-align: center" id="tHrs2"></td>
+                                <td class="col-md-1 text-center" id="tPrice2"></td>
+                                <td class="col-md-1 text-center" id="tSub2"></td>
+                            </tr>
+                            <tr id="tr3">
+                                <td class="col-md-9" id="tName3"></td>
+                                <td class="col-md-1" style="text-align: center" id="tHrs3"></td>
+                                <td class="col-md-1 text-center" id="tPrice3"></td>
+                                <td class="col-md-1 text-center" id="tSub3"></td>
+                            </tr>
+                            <tr id="tr4">
+                                <td class="col-md-9" id="tName4"></td>
+                                <td class="col-md-1" style="text-align: center" id="tHrs4"></td>
+                                <td class="col-md-1 text-center" id="tPrice4"></td>
+                                <td class="col-md-1 text-center" id="tSub4"></td>
+                            </tr>
+                            <tr id="tr5">
+                                <td class="col-md-9" id="tName5"></td>
+                                <td class="col-md-1" style="text-align: center" id="tHrs5"></td>
+                                <td class="col-md-1 text-center" id="tPrice5"></td>
+                                <td class="col-md-1 text-center" id="tSub5"></td>
+                            <tr id="tr6">
+                                <td class="col-md-9" id="tName6"></td>
+                                <td class="col-md-1" style="text-align: center" id="tHrs6"></td>
+                                <td class="col-md-1 text-center" id="tPrice6"></td>
+                                <td class="col-md-1 text-center" id="tSub6"></td>
+                            </tr>
+                            <tr id="tr7">
+                                <td class="col-md-9" id="tName7"></td>
+                                <td class="col-md-1" style="text-align: center" id="tHrs7"></td>
+                                <td class="col-md-1 text-center" id="tPrice7"></td>
+                                <td class="col-md-1 text-center" id="tSub7"></td>
+                            </tr>
+                            <tr>
+                                <td>   </td>
+                                <td>   </td>
+                                <td class="text-right"><h4><strong>Total: </strong></h4></td>
+                                <td class="text-center text-danger"><h4><strong id="tTotal"></strong></h4></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="btn btn-success btn-lg btn-block" onclick="Control.payNow()">
+                        Pay Now   <span class="glyphicon glyphicon-chevron-right"></span>
+                    </button></td>
+                </div>
+            </div></div>
+                </div>
+                </div>
+            </div>  
+        </div>
+        <div class="header">
+            <h1>Dave's Redneck Escort Service</h1>
+        </div>
+        <div class="container-fluid">
+            <div class="myNav">
+                <div class="col-md-6">
+                    <p class="text-left" id="navNum">
+                        <a href="#" id="prev" onclick="View.pageDec()"
+                           >Prev Page</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="#" id="next" onclick="View.pageInc()">Next Page</a>
+                    </p>  
+                </div>
+                <div class="col-md-6">
+                    <p class="text-right" id="checkout" onclick="Control.checkout()">
+                        <a href="#" id="checkoutLink"></a>
+                    </p>  
+                </div>
+            </div>
+
+          <div class="row" id="add_here" >
+            <div class="col-md-3">
+              <a href="#" id="a0"
+                   onclick="Control.detail(this.id)" >
+                    <div class="hid" id="0"></div>
+                <table>
+                  <tr>
+                      <td>
+                        <img class="img-responsive" src="" alt="Smiley face"  id="i0"/>  
+                      </td>
+                      <td>
+                        <table >
+                          <tr><td  id="n0"></td></tr>
+                          <tr><td  id="p0"></td></tr>
+                          <tr><td><a href="#" id="c0" class="aSpecial"
+                                     onclick="Control.addToCart(this.id)">Add to Cart!</a></td></tr>
+                        </table>
+                      </td>
+                  </tr>
+                </table>
+              </a>
+            </div><div class="col-md-3">
+              <a href="#" id="a1"
+                   onclick="Control.detail(this.id)" >
+                    <div class="hid" id="1"></div>
+                <table>
+                  <tr>
+                      <td>
+                        <img class="img-responsive" src="" alt="Smiley face"  id="i1"/>  
+                      </td>
+                      <td>
+                        <table >
+                          <tr><td  id="n1"></td></tr>
+                          <tr><td  id="p1"></td></tr>
+                          <tr><td><a href="#" id="c1" class="aSpecial"
+                                     onclick="Control.addToCart(this.id)">Add to Cart!</a></td></tr>
+                        </table>
+                      </td>
+                  </tr>
+                </table>
+              </a>
+            </div><div class="col-md-3">
+              <a href="#" id="a2"
+                   onclick="Control.detail(this.id)" >
+                    <div class="hid" id="2"></div>
+                <table>
+                  <tr>
+                      <td>
+                        <img class="img-responsive" src="" alt="Smiley face"  id="i2"/>  
+                      </td>
+                      <td>
+                        <table >
+                          <tr><td  id="n2"></td></tr>
+                          <tr><td  id="p2"></td></tr>
+                          <tr><td><a href="#" id="c2" class="aSpecial"
+                                     onclick="Control.addToCart(this.id)">Add to Cart!</a></td></tr>
+                        </table>
+                      </td>
+                  </tr>
+                </table>
+              </a>
+            </div><div class="col-md-3">
+              <a href="#" id="a3"
+                   onclick="Control.detail(this.id)" >
+                    <div class="hid" id="3"></div>
+                <table>
+                  <tr>
+                      <td>
+                        <img class="img-responsive" src="" alt="Smiley face"  id="i3"/>  
+                      </td>
+                      <td>
+                        <table >
+                          <tr><td  id="n3"></td></tr>
+                          <tr><td  id="p3"></td></tr>
+                          <tr><td><a href="#" id="c3" class="aSpecial"
+                                     onclick="Control.addToCart(this.id)">Add to Cart!</a></td></tr>
+                        </table>
+                      </td>
+                  </tr>
+                </table>
+              </a>
+            </div><div class="col-md-3">
+              <a href="#" id="a4"
+                   onclick="Control.detail(this.id)" >
+                    <div class="hid" id="4"></div>
+                <table>
+                  <tr>
+                      <td>
+                        <img class="img-responsive" src="" alt="Smiley face"  id="i4"/>  
+                      </td>
+                      <td>
+                        <table >
+                          <tr><td  id="n4"></td></tr>
+                          <tr><td  id="p4"></td></tr>
+                          <tr><td><a href="#" id="c4" class="aSpecial"
+                                     onclick="Control.addToCart(this.id)">Add to Cart!</a></td></tr>
+                        </table>
+                      </td>
+                  </tr>
+                </table>
+              </a>
+            </div><div class="col-md-3">
+              <a href="#" id="a5"
+                   onclick="Control.detail(this.id)" >
+                    <div class="hid" id="5"></div>
+                <table>
+                  <tr>
+                      <td>
+                        <img class="img-responsive" src="" alt="Smiley face"  id="i5"/>  
+                      </td>
+                      <td>
+                        <table >
+                          <tr><td  id="n5"></td></tr>
+                          <tr><td  id="p5"></td></tr>
+                          <tr><td><a href="#" id="c5" class="aSpecial"
+                                     onclick="Control.addToCart(this.id)">Add to Cart!</a></td></tr>
+                        </table>
+                      </td>
+                  </tr>
+                </table>
+              </a>
+            </div><div class="col-md-3">
+              <a href="#" id="a6"
+                   onclick="Control.detail(this.id)" >
+                    <div class="hid" id="6"></div>
+                <table>
+                  <tr>
+                      <td>
+                        <img class="img-responsive" src="" alt="Smiley face"  id="i6"/>  
+                      </td>
+                      <td>
+                        <table >
+                          <tr><td  id="n6"></td></tr>
+                          <tr><td  id="p6"></td></tr>
+                          <tr><td><a href="#" id="c6" class="aSpecial"
+                                     onclick="Control.addToCart(this.id)">Add to Cart!</a></td></tr>
+                        </table>
+                      </td>
+                  </tr>
+                </table>
+              </a>
+            </div><div class="col-md-3">
+              <a href="#" id="a7"
+                   onclick="Control.detail(this.id)" >
+                    <div class="hid" id="7"></div>
+                <table>
+                  <tr>
+                      <td>
+                        <img class="img-responsive" src="" alt="Smiley face"  id="i7"/>  
+                      </td>
+                      <td>
+                        <table >
+                          <tr><td  id="n7"></td></tr>
+                          <tr><td  id="p7"></td></tr>
+                          <tr><td><a href="#" id="c7" class="aSpecial"
+                                     onclick="Control.addToCart(this.id)">Add to Cart!</a></td></tr>
+                        </table>
+                      </td>
+                  </tr>
+                </table>
+              </a>
+            </div>
+          </div>
+        <div id="jsOut"></div>
+        <script>
+            //proveItWorks( 10 );
+        </script>
+      </div>
+    </body>
+</html>
