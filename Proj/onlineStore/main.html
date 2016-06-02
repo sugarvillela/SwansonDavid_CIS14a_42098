@@ -19,8 +19,11 @@
     <script type="text/javascript" src="./js/web_store.js"></script>
     <link rel="stylesheet" type="text/css" href="css.css"/>
     </head>
+<!--    On load, populate the main view from database-->
     <body onload="View.init()">
-        <div id="fade" class="black_overlay"></div><!--Provides fade out when calendar link is clicked-->
+        <!--Provide fade out when css popup is active. Normally set to display: none-->
+        <div id="fade" class="black_overlay"></div>
+        <!--css popup for detail page. Normally set to display: none-->
         <div id="lightbox" class="white_content">
             <div class="container-fluid">
                 <div class="hid" id="detail_hidden"></div>
@@ -49,6 +52,7 @@
                 </div>
             </div>  
         </div>
+        <!--css popup for checkout page. Normally set to display: none-->
         <div id="checkoutForm" class="popForm">
             <div class="container-fluid">
                 <div class="row" >
@@ -136,11 +140,14 @@
                 </div>
             </div>  
         </div>
+        <!--Banner display-->
         <div class="header">
             <h1>Dave's Redneck Escort Service</h1>
         </div>
+        <!--Main container div-->
         <div class="container-fluid">
             <div class="myNav">
+                <!--Nav links for browsing paginated display-->
                 <div class="col-md-6">
                     <p class="text-left" id="navNum">
                         <a href="#" id="prev" onclick="View.pageDec()"
@@ -148,14 +155,15 @@
                         <a href="#" id="next" onclick="View.pageInc()">Next Page</a>
                     </p>  
                 </div>
+                <!--Nav links with cart display. Hidden when cart is empty-->
                 <div class="col-md-6">
                     <p class="text-right" id="checkout" onclick="Control.checkout()">
                         <a href="#" id="checkoutLink"></a>
                     </p>  
                 </div>
             </div>
-
-          <div class="row" id="add_here" >
+            <!--Main display: 8 identical small tables, id's numbered 0-7-->
+          <div class="row">
             <div class="col-md-3">
               <a href="#" id="a0"
                    onclick="Control.detail(this.id)" >
@@ -170,7 +178,7 @@
                           <tr><td  id="n0"></td></tr>
                           <tr><td  id="p0"></td></tr>
                           <tr><td><a href="#" id="c0" class="aSpecial"
-                                     onclick="Control.addToCart(this.id)">Add to Cart!</a></td></tr>
+                                    onclick="Control.addToCart(this.id)">Add to Cart!</a></td></tr>
                         </table>
                       </td>
                   </tr>
@@ -318,10 +326,6 @@
               </a>
             </div>
           </div>
-        <div id="jsOut"></div>
-        <script>
-            //proveItWorks( 10 );
-        </script>
       </div>
     </body>
 </html>
