@@ -1,0 +1,10 @@
+.jumbotron {
+    padding: 0.2em 0.2em;
+    text-align: center;
+}
+.jumbotron p {
+    font-size: 1.2em;
+}
+.jumbotron .btn {
+    padding: 0.5em;
+}
