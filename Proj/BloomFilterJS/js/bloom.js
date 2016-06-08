@@ -31,15 +31,6 @@ function arrayToPretty( strArray ){//display an array as a table
 function valIn( value ){
     document.getElementById('size_submit').style.visibility= 
         ( value.match("^[1-9]+[0-9]*$") )? 'visible' : 'hidden';
-    //console.log( value );
-//    if( value.match("^[1-9]+[0-9]*$") ){
-//        //console.log( "good" );
-//        document.getElementById('size_submit').style.visibility= 'visible';
-//    }
-//    else {
-//        //console.log( "bad" );
-//        document.getElementById('size_submit').style.visibility= 'hidden';
-//    }
 }
 var TestBloom= new function(){
     this.B=false;
@@ -85,12 +76,10 @@ var TestBloom= new function(){
         var falsePos=100 * badPos/this.testSize;
         var result="InputSize = "+this.numBytes+
                 " bytes; bloomSize = "+this.B.getBloomSize()+
-                " bits, storeSize = "+this.B.getStoreSize()+" bytes<br>";
+                " bits, storeSize = "+this.B.getStoreSize()+" integer elements * 4 bytes<br>";
         result+="testSize = "+this.testSize+"; goodPos = "+goodPos+"; badNeg = "+badNeg+"; badPos = "+badPos+";<br>";
-        result+="found = "+found+"%, lost = "+lost+"%, falsePos = "+falsePos+"%<br>";
-
+        result+="found = "+found+"%, lost = "+lost+"%, falsePos = "+falsePos.toFixed(2)+"%<br>";
         result+="<br>";
-        //result+=this.B.display();
         return result;
     }
     this.changeView=function( view ){
@@ -185,6 +174,7 @@ function BloomFilter( strArray ){
         var ln2 = Math.log(2);          //save value for later
         var p = 0.1;                    //p is probability of false positive
         var size = ( -1 * bits * Math.log(p) )/(ln2 * ln2); //m = -(n*lnp)/(ln2)^2
+        size/=2;//set by experimental result: about 2 false positives per 1000 runs
         return Math.ceil( size/32 )*32;//fix length to be a multiple of 32
     }
     /* The function to call for finding an item in the bloom filter.
@@ -223,8 +213,7 @@ function BloomFilter( strArray ){
             if( i%3 == 0 ){
                 table+= "</tr><tr>";
             }
-            table+= "<td>"+padL( this.store[i].toString(2), 32, "0" )+" </td>";//.padL( this.store[i].toString(2), 8, "0" )
-            //table+= "<td>"+str_pad( decbin( this.store[i] ),32,"0",STR_PAD_LEFT)+" </td>";
+            table+= "<td>"+padL( this.store[i].toString(2), 32, "0" )+" </td>";
         }
         table+= "</tr></table>";
         return table;
