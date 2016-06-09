@@ -68,13 +68,13 @@ var Rules = new function(){
         )
     };
     this.mainToAces=function( src_from, src_to ){
-        //console.log( "mainToAces() src_from: "+src_from+ " src_to:"+src_to );
+        //console.log( "mainToAces() src_from: "+parseInt( src_from[1], 16 )+ " src_to:"+parseInt( src_to[1], 16 ) );
         if( src_from == 0 || src_from == 'h' ){return false;}
         return( 
             src_from != 0 && src_from != 'h' &&
             (
                 (src_from[1]==1 && src_to==0) ||
-                (src_from[0]==src_to[0] && src_from[1]-src_to[1]==1)
+                (src_from[0]==src_to[0] && ( parseInt( src_from[1], 16 ) - parseInt( src_to[1], 16 ) )==1)
             )
         )
     };

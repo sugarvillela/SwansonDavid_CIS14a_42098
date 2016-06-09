@@ -67,8 +67,8 @@ var Model_main = new function(){
     this.save=function(){
         for( var i=0; i<7; i++){
             if( !this.stack[i].length ){
-                console.log( "main stack" );
-                console.log( JSON.stringify( this.stack ) );
+                //console.log( "main stack" );
+                //console.log( JSON.stringify( this.stack ) );
                 break;
             }
         }
